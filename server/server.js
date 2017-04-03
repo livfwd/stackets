@@ -14,31 +14,31 @@ passport.use(new Strategy({
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: 'http://localhost:3000/login/facebook/return',
     profileFields: ['id', 'displayName', 'photos', 'email']
-  }, function(accessToken, refreshToken, profile, done) {        
+  }, function(accessToken, refreshToken, profile, done) {
     db.User.findOrCreate({
-      where: {        
-        name: profile.displayName,        
+      where: {
+        name: profile.displayName,
         image: profile.photos[0].value,
         provider: profile.provider,
-        facebook_id: profile.id  
+        facebook_id: profile.id
       }
     })
     .then(function(user, err) {
       return done(err, user);
-    })    
+    })
 }));
 
 passport.use(new GitHubStrategy({
     clientID: process.env.GIT_CLIENT_ID,
     clientSecret: process.env.GIT_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/login/github/return",
+    callbackURL: "https://codeminder.herokuapp.com/login/github/return",
     profileFields: ['id', 'displayName', 'photos', 'email']
   },
   function(accessToken, refreshToken, profile, done) {
     console.log('github profile..', profile)
     db.User.findOrCreate({
-      where: {        
-        name: profile.displayName,      
+      where: {
+        name: profile.displayName,
         image: profile._json.avatar_url,
         provider: profile.provider,
         github_id: profile.id
@@ -46,7 +46,7 @@ passport.use(new GitHubStrategy({
     })
     .then(function(user, err) {
       return done(err, user);
-    }); 
+    });
   }
 ));
 

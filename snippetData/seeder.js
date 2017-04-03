@@ -15,7 +15,7 @@ var Subcategory = db.Subcategory;
 //wait 2000ms for the tables above to be created
 setTimeout(function() {
   seedData();
-}, 2000);
+}, 5000);
 
 //add data to database
 var seedData = function() {
