@@ -4,7 +4,7 @@ angular.module('stackets.login', [])
 	var query = $location.search()
   var photo = query["photo"];
   var imageKey = query["oe"];
-  
+
   $scope.photo = photo;
   $scope.username = query["name"];
   $scope.imageUrl = photo + '&oe=' + imageKey;
