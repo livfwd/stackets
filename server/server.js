@@ -1,8 +1,9 @@
-require('../env.js')
+// require('../env.js')
 var db = require('./config/db.js');
 var jwt = require('jsonwebtoken');
 var express = require('express');
 var session = require('express-session');
+var path = require('path');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var passport = require('passport');
@@ -69,7 +70,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static('client'));
+// app.use(express.static('client'));
+app.use('/', express.static(path.join(__dirname, '../client')))
 
 require('./config/routes.js')(app, express);
 var port = process.env.PORT || 3000;
