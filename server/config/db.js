@@ -103,6 +103,7 @@ Snippet.sync()
 .then(() => ResourceUrl.sync())
 .then(() => Category.sync())
 .then(() => Subcategory.sync());
+.then(() => User.sync());
 
 //export table schemas for use in other files
 module.exports = {
