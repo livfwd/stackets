@@ -75,7 +75,7 @@
                   <div class="add-snippet-panel">
                     <form name="addSnippetForm" novalidate>
                       <div class="form-group col-md-8">
-                        <label for="title">Title</label>
+                        <label for="title">Title <ng-show="addSnippetForm.title.$invalid">*</label>
                         <input type="text" class="form-control" name="title" id="title" ng-model="snippet.title" required>
                       </div>
                       <div class="form-group col-md-4">
