@@ -114,7 +114,8 @@
                         </span>
                       </div>
                       <div class="form-group col-md-12 text-right">
-                        <span class="add-form-invalid-asterisk" ng-show="addSnippetForm.$invalid">*Required Info Missing</span><button type="button" class="btn btn-default" ng-click="addSnippetForm.$valid && code.length > 0 && addSnippet(addSnippetForm)">Submit</button>
+                        <button type="button" class="btn btn-default" ng-click="addSnippetForm.$valid && code.length > 0 && addSnippet(addSnippetForm)"> Submit</button><br/>
+                        <span class="add-form-invalid-asterisk" ng-show="addSnippetForm.$invalid">*Required Info Missing</span>
                       </div>
                     </form>
                   </div>
