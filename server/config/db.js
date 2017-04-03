@@ -81,29 +81,29 @@ var User = db.define('User', {
 
 //sync individual tables listed above and create join tables
 Snippet.sync()
-.then(() => Snippet.belongsTo(User, {foreignkey: 'UserId'}))
 .then(() => User.hasMany(Snippet, {foreignkey: 'SnippetId'}))
-.then(() => Snippet.belongsTo(Language, {foreignkey: 'LanguageId'}))
+.then(() => Snippet.belongsTo(User, {foreignkey: 'UserId'}))
 .then(() => Language.hasMany(Snippet, {foreignkey: 'LanguageId'}))
+.then(() => Snippet.belongsTo(Language, {foreignkey: 'LanguageId'}))
 .then(() => Snippet.hasMany(ResourceUrl, {foreignkey: 'SnippetId'}))
 .then(() => ResourceUrl.belongsTo(Snippet, {foreignkey: 'SnippetId'}))
 .then(() => Category.hasMany(Subcategory, {foreignkey: 'CategoryId'}))
 .then(() => Subcategory.belongsTo(Category, {foreignkey: 'CategoryId'}))
-.then(() => Snippet.belongsTo(Category, {foreignkey: 'CategoryId'}))
 .then(() => Category.hasMany(Snippet, {foreignkey: 'CategoryId'}))
-.then(() => Snippet.belongsTo(Subcategory, {foreignkey: 'SubcategoryId'}))
+.then(() => Snippet.belongsTo(Category, {foreignkey: 'CategoryId'}))
 .then(() => Subcategory.hasMany(Snippet, {foreignkey: 'SubcategoryId'}))
+.then(() => Snippet.belongsTo(Subcategory, {foreignkey: 'SubcategoryId'}))
 .then(() => Snippet.hasMany(Favorite, {foreignkey: 'SnippetId'}))
-.then(() => User.hasMany(Favorite, {foreignkey: 'UserId'}))
 .then(() => Favorite.belongsTo(Snippet, {foreignkey: 'SnippetId'}))
+.then(() => User.hasMany(Favorite, {foreignkey: 'UserId'}))
 .then(() => Favorite.belongsTo(User, {foreignkey: 'UserId'}))
-.then(() => Language.sync())
+.then(() => User.sync());
 .then(() => Snippet.sync())
-.then(() => Favorite.sync())
+.then(() => Language.sync())
 .then(() => ResourceUrl.sync())
+.then(() => Favorite.sync())
 .then(() => Category.sync())
 .then(() => Subcategory.sync())
-.then(() => User.sync());
 
 //export table schemas for use in other files
 module.exports = {
