@@ -82,7 +82,7 @@
                         <h3><span class="snippet-card-heart"><div ng-if="snippet.id"><favorite snippetid={{snippet.id}}></favorite></div></span>{{ snippet.title }}</h3>
                         <p><img ng-src="{{snippet.user.image}}" class="snippet-card-avatar" alt="">{{snippet.user.name}}</p>
                         <p>{{ snippet.notes}}</p>
-                        <p class="snippet-card-resource-heading" ng-show="snippet.resources.length > 1">Resources</p>
+                        <p class="snippet-card-resource-heading" ng-if="snippet.resources.length > 0">Resources</p>
                         <div ng-repeat="resource in snippet.resources">
                           <p class="snippet-card-resource"><a href="{{resource.url}}" target="_blank">{{ resource.url }}</a></p>
                         </div>
