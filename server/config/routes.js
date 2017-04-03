@@ -112,8 +112,7 @@ module.exports = function(app, express) {
     res.redirect('/');
   });
   //redirect to the home page
-  // app.get('/*', function(req, res) {
-  //   console.log('incoming request coming...', req.headers);
-  //   res.redirect('/');
-  // });
+  app.get('/*', function(req, res) {
+    res.redirect('/');
+  });
 };
