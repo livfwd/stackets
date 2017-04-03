@@ -19,6 +19,10 @@ nav.navbar.navbar-default.navbar-fixed-top {
   /*margin-top: 20px;*/
 }
 
+a.navbar-brand.logo:hover, a.navbar-brand.logo:focus {
+  color: #BFECE2;
+}
+
 #menu-toggle:hover, #menu-toggle:focus {
   color: #BFECE2;
 }
