@@ -87,8 +87,8 @@
                         </select>
                       </div>
                       <div class="form-group col-md-12">
-                        <label for="snippet">Snippet</label>
-                        <div ui-ace="{ onLoad: aceLoaded }" id="editor" ng-model="snippet.snippet"></div>
+                        <label for="snippet">Snippet <span class="add-form-invalid-asterisk" ng-show="addSnippetForm.editor.$invalid">*</span></label>
+                        <div ui-ace="{ onLoad: aceLoaded }" name="editor" id="editor" ng-model="snippet.snippet" required></div>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="notes">Notes</label>
