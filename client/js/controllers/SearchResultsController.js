@@ -21,14 +21,14 @@ angular.module('stackets.searchResults', [])
     };
 
     var truncateNote = function(note) {
-      return note.split(' ').splice(0, 21).join(' ') + '...';
+      return note.split(' ').splice(0, 19).join(' ') + '...';
     };
 
     if ($location.$$path.split('/')[2] === 'mysnippets') {
 
       Snippets.getAllSnippets().then(function(snippets) {
         snippets = snippets.map(snippet => {
-          if (snippet.notes.length > 20) snippet.notes = truncateNote(snippet.notes);
+          if (snippet.notes.length > 18) snippet.notes = truncateNote(snippet.notes);
           if (snippet.title.length > 20) snippet.title = truncateTitle(snippet.title);
           snippet.snippet = JSON.parse(snippet.snippet);
           return snippet;
