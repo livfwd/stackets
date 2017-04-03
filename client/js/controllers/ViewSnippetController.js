@@ -46,6 +46,7 @@ angular.module('stackets.view', [])
       _editor.setTheme("ace/theme/cobalt");
       // Mode @ https://github.com/ajaxorg/ace/tree/master/lib/ace/mode
       _session.setMode("ace/mode/javascript");
+      _editor.$blockScrolling = Infinity;
       // Load the snippet's code
       _session.setValue('');
       // Events
