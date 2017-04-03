@@ -108,7 +108,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="resourceUrl">Enter Resource URLs (hit return to add url to list) <span class="add-form-invalid-asterisk" ng-show="addSnippetForm.resource.$invalid">*</span></label>
-                        <input type="url" class="form-control add-snippet-url" name="resource" id="resourceUrl" ng-model="snippet.resources" ng-keypress="addResource($event)">
+                        <input type="url" class="form-control add-snippet-url" name="resource" id="resourceUrl" ng-model="snippet.resources" ng-keypress="addResource($event)" placeholder="http://www.your-url.com">
                         <span ng-repeat="url in resourceUrls">
                           <p ng-click="removeResource($index)"><span class="add-snippet-added-resources-item">{{url}} <i class="fa fa-times-circle" aria-hidden="true"></i></p>
                         </span>
