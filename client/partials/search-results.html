@@ -30,7 +30,7 @@
         <div class="snippet-card-editor" ui-ace="{ onLoad: aceLoaded }" id="editor" ng-model="snippet.snippet"></div>
         <div class="caption">
           <h3 class="snippet-card-title"><span class="snippet-card-heart"><favorite snippetid={{snippet.id}}></favorite></span>{{ snippet.title }}</h3>
-          <p><img src="{{snippet.user.image}}" class="snippet-card-avatar" alt="">{{snippet.user.name}}</p>
+          <p><img ng-src="{{snippet.user.image}}" class="snippet-card-avatar" alt="">{{snippet.user.name}}</p>
           <div class="snippet-card-note-wrapper">
             <p>{{ snippet.notes}}</p>
           </div>

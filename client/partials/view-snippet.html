@@ -80,7 +80,7 @@
                       <div ui-ace="{ onLoad: aceLoaded }" id="editor" ng-model="code"></div>
                       <div class="caption">
                         <h3><span class="snippet-card-heart"><div ng-if="snippet.id"><favorite snippetid={{snippet.id}}></favorite></div></span>{{ snippet.title }}</h3>
-                        <p><img src="{{snippet.user.image}}" class="snippet-card-avatar" alt="">{{snippet.user.name}}</p>
+                        <p><img ng-src="{{snippet.user.image}}" class="snippet-card-avatar" alt="">{{snippet.user.name}}</p>
                         <p>{{ snippet.notes}}</p>
                         <p class="snippet-card-resource-heading">Resources</p>
                         <div ng-repeat="resource in snippet.resources">
