@@ -28,6 +28,8 @@ angular.module('stackets.home', [])
       Snippets.logIn(userId);
     }
 
+    $location.url($location.path());
+
   	$scope.show = true;
   	$scope.toggleShow = function() {
   		$scope.show = $scope.show ? false : true;
