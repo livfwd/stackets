@@ -71,7 +71,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 // app.use(express.static('client'));
-app.use('/', express.static(path.join(__dirname, '../client')))
+app.use(express.static(path.join(__dirname, '../client')));
+// app.use('/', express.static(path.join(__dirname, '../client')))
 
 require('./config/routes.js')(app, express);
 var port = process.env.PORT || 3000;
