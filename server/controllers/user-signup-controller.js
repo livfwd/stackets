@@ -1,4 +1,4 @@
-require('../../env.js')
+// require('../../env.js')
 var db = require('../config/db.js');
 var bcrypt = require('bcrypt-nodejs');
 var jwt = require('jsonwebtoken');
@@ -21,5 +21,5 @@ module.exports = {
 				res.send(token);
 	    })
 	});
-  }	
+  }
 }

@@ -1,4 +1,4 @@
-require('../../env.js')
+// require('../../env.js')
 var jwt = require('jsonwebtoken');
 
 module.exports = {

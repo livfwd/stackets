@@ -1,4 +1,4 @@
-require('../../env.js')
+// require('../../env.js')
 var db = require('../config/db.js');
 var jwt = require('jsonwebtoken');
 
