@@ -97,13 +97,13 @@ Snippet.sync()
 .then(() => Favorite.belongsTo(Snippet, {foreignkey: 'SnippetId'}))
 .then(() => User.hasMany(Favorite, {foreignkey: 'UserId'}))
 .then(() => Favorite.belongsTo(User, {foreignkey: 'UserId'}))
-.then(() => User.sync());
+.then(() => User.sync())
 .then(() => Snippet.sync())
 .then(() => Language.sync())
 .then(() => ResourceUrl.sync())
 .then(() => Favorite.sync())
 .then(() => Category.sync())
-.then(() => Subcategory.sync())
+.then(() => Subcategory.sync());
 
 //export table schemas for use in other files
 module.exports = {
