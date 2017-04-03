@@ -13,7 +13,7 @@ var GitHubStrategy = require('passport-github2');
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/login/facebook/return',
+    callbackURL: 'https://codeminder.herokuapp.com/login/facebook/return',
     profileFields: ['id', 'displayName', 'photos', 'email']
   }, function(accessToken, refreshToken, profile, done) {
     db.User.findOrCreate({
