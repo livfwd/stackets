@@ -289,6 +289,10 @@ input.add-snippet-url {
   cursor: pointer;
 }
 
+.add-form-invalid-asterisk {
+  color: #BF4E4C;
+}
+
 
 /*FAVORITE*/
 
