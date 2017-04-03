@@ -28,7 +28,6 @@ angular.module('stackets.addSnippet', ['ui.ace'])
 
     //the method below will add a snippet using the add snippet form.
     $scope.addSnippet = function (form) {
-      console.log('trying to add')
       this.snippet.snippet = JSON.stringify($scope.code);
       this.snippet.resources = $scope.resourceUrls.length > 0 ? $scope.resourceUrls : [this.snippet.resources];
       this.snippet.userId = userId;
@@ -41,7 +40,6 @@ angular.module('stackets.addSnippet', ['ui.ace'])
 //the method below ties the language selected for the snippet to the ace editor's style guide for that language.
     $scope.setAceEditorLang = function (form) {
       var languageId = Number(this.snippet.LanguageId);
-      console.log('Language ID: ', languageId);
       var language;
       for (var i = 0; i < $scope.languages.length; i++) {
         if ($scope.languages[i].id === languageId) {

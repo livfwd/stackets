@@ -37,8 +37,6 @@ angular.module('stackets.searchResults', [])
       });
 
     } else if (!$location.$$path.split('/')[2]) {
-      // var userId = Snippets.getLoggedInUserData().id;
-      // console.log('userid', userId);
       Snippets.getAllSnippets().then(function (snippets) {
         snippets = snippets.map(snippet => {
           if (snippet.notes.length > 20) snippet.notes = truncateNote(snippet.notes);
@@ -57,7 +55,6 @@ angular.module('stackets.searchResults', [])
       }
       $state.params.query = '';
     } else if ($location.$$path.split('/')[2] === 'myfavorites') {
-      // var userId = Snippets.getLoggedInUserData().id;
       Snippets.getFavsByUser(userId).then(function(response) {
         var snippets = response.data;
         snippets = snippets.map(snippet => {

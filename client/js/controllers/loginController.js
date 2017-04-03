@@ -20,13 +20,12 @@ angular.module('stackets.login', [])
           url: '/login',
           data: {email: email, password: password}
     }).then(function(response){
-      console.log('login response', response)
       $scope.loggedUserEmail = response.data.userEmail;
       $window.localStorage.stacketsToken = response.data.token;
       Snippets.setLogInStatus();
       $location.path('/');
     }, function(err){
-      console.log(err)
+      console.error(err)
     });
   }
 })

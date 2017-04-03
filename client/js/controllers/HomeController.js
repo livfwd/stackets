@@ -2,7 +2,6 @@ angular.module('stackets.home', [])
   .controller('HomeController', function ($scope, $http, $window, $location, Snippets) {
     $scope.loggedIn = Snippets.getLogStatus();
     Snippets.authenticate().then(function(response) {
-      console.log('authenticating', $scope.loggedIn)
       if ($window.localStorage.stacketsToken) {
         $scope.loggedIn = Snippets.setLogInStatus();
         $scope.username = response.data.name;
@@ -13,7 +12,7 @@ angular.module('stackets.home', [])
         $location.replace();
       }
     }, function(err) {
-      console.log(err);
+      console.error(err);
     });
 
     var query = $location.search()
@@ -41,7 +40,7 @@ angular.module('stackets.home', [])
 		}).then(function(response){
 		  $scope.loggedUserEmail = response.data.userEmail;
     }, function(err) {
-      console.log(err)
+      console.error(err)
     });
   }
 });
