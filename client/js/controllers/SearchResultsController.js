@@ -13,7 +13,7 @@ angular.module('stackets.searchResults', [])
       var newTitle = [];
       var charCount = 0;
       title.split(' ').forEach(word => {
-        if (charCount + word.length <= 22) newTitle.push(word);
+        if (charCount + word.length <= 21) newTitle.push(word);
         charCount += word.length;
       });
       newTitle = newTitle.join(' ');
@@ -29,7 +29,7 @@ angular.module('stackets.searchResults', [])
       Snippets.getAllSnippets().then(function(snippets) {
         snippets = snippets.map(snippet => {
           if (snippet.notes.length > 20) snippet.notes = truncateNote(snippet.notes);
-          if (snippet.title.length > 22) snippet.title = truncateTitle(snippet.title);
+          if (snippet.title.length > 20) snippet.title = truncateTitle(snippet.title);
           snippet.snippet = JSON.parse(snippet.snippet);
           return snippet;
         });
