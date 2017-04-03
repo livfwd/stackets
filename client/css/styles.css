@@ -300,6 +300,13 @@ input.add-snippet-url {
 
 /* LOGIN */
 
+.login-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .login-logo {
   text-align: center;
 }
